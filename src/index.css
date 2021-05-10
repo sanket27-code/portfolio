@@ -1,0 +1,408 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.navBar{
+    background-color: rgb(30, 41, 41);
+    color: white;
+    display: flex;
+    justify-content: space-evenly;
+    height: 60px;
+    position: fixed;
+    width: 100%;
+    overflow: hidden;
+    z-index: 1;
+}
+.navBar h3{
+    display: inline-flex;
+    margin: 5px ;
+    padding: 10px 25px;
+    font-size: 30px;
+    letter-spacing: 2px;
+    text-align: center;
+    text-transform: capitalize;
+    font-family: sans-serif;
+
+}
+.navBarContainer{
+    display: flex;
+    justify-content: space-evenly;
+}
+.navBarItem{
+    list-style: none;
+    margin: 5px;
+    padding: 15px 25px;
+    font-size: 20px;
+    text-transform: capitalize;
+    text-align: center;
+    color: white;
+    transform: scale(0.6);
+    cursor: pointer;
+}
+.navBarItem:hover{
+    border-bottom: 1px solid white;
+    transform: scale(1.1);
+}
+
+/* -------------------------------------------------- */
+
+.home_main_div {
+    width: 100%;
+    height: 100vh;
+    background-image: url('./images/bg4.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.home_main_div .content{
+    font-family: 'Sansita Swashed', cursive;
+}
+.home_main_div .content h2{
+    font-family: 'EB Garamond', serif;
+    text-transform: capitalize;
+    font-size: 50px;
+    margin: 10px;
+    color: white;
+    text-shadow: 0px 2px 5px rgb(99, 95, 95);
+    letter-spacing: 0.12rem;
+}
+.home_main_div .content p{
+    color: magenta;
+}
+.home_main_div .content h4{
+    justify-content: center;
+    font-size: 25px;
+    margin-top: 10px;
+    width: 0ch;
+    color: goldenrod;
+    text-transform: capitalize;
+    animation: abilities 8s linear infinite;
+    border-right: 2px solid white;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.home_main_div .content h4 .h4_coder{
+    opacity: 0;
+}
+@keyframes abilities{
+    0%{
+        width: 0ch;
+    }
+    50%{
+        width: 40ch;
+    }
+    75%{
+        width: 27ch;
+    }
+    90%{
+        width: 40ch;
+    }
+    100%{
+        color: orange;
+    }
+}
+
+/* ----------------------------------------------------------- */
+
+.about_main_div{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: dodgerblue;
+    z-index: 2;
+}
+.about_cards{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 0 100px 0;
+}
+.about_cards .card{
+    width: 200px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    margin: 30px;
+    background-color: rgb(29, 27, 27);
+    border-radius: 10px;
+    transform: scale(1);
+    transition: 0.2s all ease-out;
+}
+.about_cards .card:hover{
+    transform: scale(1.1);
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.5);
+}
+.about_cards .card img{
+    width: 200px;
+    height: 150px;
+    border-radius: 10px 10px 0 0;
+}
+.about_cards .card .card_content{
+    height: 45%;
+    align-items: center;
+    text-align: center;
+    margin: 0 5px;
+    border-bottom: 2px solid lime;
+}
+.about_cards .card .card_content h5{
+    margin: 5px 0px;
+    font-size: 20px;
+    color: lime;
+    line-height: 20px;
+    text-transform: capitalize;
+    font-family: 'Kaushan Script', cursive;
+}
+.card .card_content p{
+    text-align: justify;
+    color: white;
+    font-family: 'Alef', sans-serif;
+    font-size: 14px;
+    padding: 5px 5px;
+    border-top: 2px solid lime;
+}
+
+/* ----------------------SKILLS-------------------------- */
+
+.skills_main_div{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+    background-color: rgb(209, 136, 207);
+}
+.skills_main_div .all_cards{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    text-align: center;
+    padding: 0 0 100px 0;
+}
+.card_main_div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.card_container{
+    perspective: 1000px;
+}
+.skill_card{
+    width: 250px;
+    height: 250px;
+    position: relative;
+    transition: all 0.5s linear;
+    transform-style: preserve-3d;
+}
+.skill_card .front, .skill_card .back{
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    border-radius: 10%;
+}
+.skill_card .front{
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2;
+    backface-visibility: hidden;
+}
+.skill_card .front img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10%;
+    opacity: 1;
+    background: transparent;
+}
+.card_container:hover .front img{
+    opacity: 0.5;
+}
+.skill_card .back{
+    opacity: 0;
+    transition: opacity 1s ease-in;
+    background-color: white;
+    z-index: 1;
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+}
+.back h3{
+    font-size: 26px;
+    padding: 0 0 40px 0;
+    text-shadow: 0px 5px 5px rgba(0, 0, 0, 0.6);
+    text-transform: capitalize;
+}
+.back p{
+    justify-content: center;
+    font-size: 14px;
+    padding: 0 10px 40px 10px;
+    font-weight: 900;
+}
+.card_container:hover .back{
+    opacity: 1;
+}
+.card_container:hover .skill_card{
+    transform: rotateY(180deg);
+}
+
+
+/* ------------------------------------------------------- */
+
+.contact_main_div{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    text-align: center;
+    background: linear-gradient(70deg, rgb(70, 149, 214) , rgb(46, 117, 250) );
+    border-radius: 80% 30% 20% 40%/0 100% 0 100%;
+}
+.contact_main_div .info{
+    width: 40%;
+    justify-content: left;
+    text-align: left;
+}
+.contact_p{
+    color: rgb(197, 17, 17);
+    font-size: 16px;
+}
+.contact_p::before{
+    content: '';
+    width: 50px;
+    position: absolute;
+    border: 1px solid rgb(223, 35, 35);
+    transform: translate(-120%,500%);
+}
+.contact_p::after{
+    content: '';
+    width: 50px;
+    position: absolute;
+    border: 1px solid rgb(223, 35, 35);
+    transform: translate(20%,500%);
+}
+.contact_content{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    text-align: center;
+    width: 100%;
+}
+.info .msg_title_div{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    margin-bottom: 10px;
+    width: 400px;
+    padding: 0 0 20px 0;
+}
+.msg_title_div h4{
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+.my_info{
+    display: flex;
+    margin: 10px 0px;
+    align-items: center;
+}
+.my_info .icons{
+    color: rgb(202, 41, 41);
+    margin: 0px 15px 0px 0px;
+}
+.my_info p{
+    font-size: 14px;
+    font-weight: 800;
+}
+.my_info p span{
+    color: rgba(0, 0, 0, 0.5);
+}
+.contact_main_div .msg_form{
+    max-width: 40%;
+    justify-content: right;
+    text-align: left;
+}
+.msg_form form{
+    align-items: center;
+    text-align: left;
+}
+.msg_form h4{
+    font-size: 20px;
+    padding: 10px 0px;
+}
+.msg_form form input, .msg_form form textarea{
+    outline: none;
+    border: none;
+    background-color: rgb(231, 220, 220);
+    margin: 2px 10px 10px 0px;
+    padding: 5px 10px;
+    border-radius: 20px;
+    color: rgba(0, 0, 0, 0.8);
+    font-size: 14px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.5);
+}
+.msg_form form textarea{
+    width: 100%;
+    resize: none;
+    height: 50%;
+}
+
+/* -------------------------------------------------------- */
+.scrollToTop{
+    position: fixed;
+    left: 50%;
+    bottom: 20px;
+    width: 40px;
+    height: 40px;
+    background-color: rgb(170, 29, 29);
+    color: white;
+    border-radius: 100%;
+    z-index: 1;
+    padding: 5px 0 0 0;
+    align-items: center;
+    text-align: center;
+}
+.scrollIcon{
+    animation: scrolls 0.5s ease infinite;
+    transition: all ease-in;
+}
+@keyframes scrolls{
+    0%{
+        transform: translateY(3px);
+    }
+    50%{
+        transform: translateY(0);
+    }
+}
+
+
+.component_title p{
+    font-size: 10;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    width: 60%;
+    margin: 10px auto;
+}
+.component_title h5{
+    color: black;
+    text-shadow: 0 4px 5px rgba(0, 0, 0, 0.5);
+    font-size: 40px;
+    font-weight: 600;
+    font-family: cursive;
+    letter-spacing: 1.2px;
+    text-transform: capitalize;
+}
